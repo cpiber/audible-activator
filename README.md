@@ -10,6 +10,8 @@ July-2020 update: https://github.com/openaudible/openaudible folks have stolen
 this `central principal component` code + "IP" and have created a
 non-100%-free-source commercial product with it.
 
+THIS FORK: Updates the original script to modern selenium.
+
 
 ## Usage
 
@@ -46,6 +48,8 @@ $ ffplay -activation_bytes CAFED00D sample.aax
 
 Python 2 (or Python >= 3.6) is required along with Selenium, Requests,
 ChromeDriver, and Google Chrome.
+
+Use `pip install -r requirements.txt` to install all dependencies, or install manually:
 
 ```
 pip install --user requests  # use "easy_install" if pip is missing
