@@ -10,6 +10,7 @@ import binascii
 import requests
 from getpass import getpass
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from optparse import OptionParser
 
 PY3 = sys.version_info[0] == 3
@@ -90,8 +91,9 @@ def fetch_activation_bytes(username, password, options):
             chromedriver_path = "./chromedriver"
 
 
+        service = ChromeService(executable_path=chromedriver_path)
         driver = webdriver.Chrome(options=opts,
-                                  executable_path=chromedriver_path)
+                                  service=service)
 
     query_string = urlencode(payload)
     url = login_url + query_string
